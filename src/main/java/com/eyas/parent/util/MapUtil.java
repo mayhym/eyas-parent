@@ -31,7 +31,7 @@ public class MapUtil {
         return tListResult;
     }
 
-    public static <T> T mapToBean(Map<String,Object> map, T bean){
+    public static <T> T mapToBean(Map<String, Object> map, T bean) {
         BeanMap beanMap = BeanMap.create(bean);
         beanMap.putAll(map);
         return bean;
@@ -39,6 +39,7 @@ public class MapUtil {
 
     /**
      * 将对象装换为map
+     *
      * @param bean bean
      * @return map
      */
@@ -47,7 +48,7 @@ public class MapUtil {
         if (bean != null) {
             BeanMap beanMap = BeanMap.create(bean);
             for (Object key : beanMap.keySet()) {
-                map.put(key+"", beanMap.get(key));
+                map.put(key + "", beanMap.get(key));
             }
         }
         return map;
@@ -55,15 +56,13 @@ public class MapUtil {
 
     /**
      * 将一个 Map 对象转化为一个 JavaBean
+     *
      * @param clazz 要转化的类型
-     * @param map 包含属性值的 map
+     * @param map   包含属性值的 map
      * @return 转化出来的 JavaBean 对象
-     * @throws IntrospectionException
-     *             如果分析类属性失败
-     * @throws IllegalAccessException
-     *             如果实例化 JavaBean 失败
-     * @throws InstantiationException
-     *             如果实例化 JavaBean 失败
+     * @throws IntrospectionException 如果分析类属性失败
+     * @throws IllegalAccessException 如果实例化 JavaBean 失败
+     * @throws InstantiationException 如果实例化 JavaBean 失败
      */
     public static <T> T map2ToBean(Class<T> clazz, Map map) throws IntrospectionException, IllegalAccessException, InstantiationException {
         // 获取类属性

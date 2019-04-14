@@ -11,7 +11,7 @@ public class BeanUtil {
      * 拿到反射父类私有属性
      *
      * @param name name
-     * @param cls 类
+     * @param cls  类
      * @return field
      */
     public static Field getPrivateField(String name, Class cls) {

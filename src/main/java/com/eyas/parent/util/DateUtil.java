@@ -99,11 +99,11 @@ public class DateUtil {
     /**
      * 字符串转date类型
      *
-     * @param date date
+     * @param date    date
      * @param pattern pattern
      * @return Date
      */
-    public static Date toDate2(String date, String pattern){
+    public static Date toDate2(String date, String pattern) {
         LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.ofPattern(pattern));
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zdt = localDate.atStartOfDay(zoneId);

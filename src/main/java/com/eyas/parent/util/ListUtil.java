@@ -57,7 +57,7 @@ public class ListUtil {
      *
      * @param tList 集合
      * @param index 条数
-     * @param <T> 泛型
+     * @param <T>   泛型
      * @return list
      */
     public static <T> List<T> getIndexList(List<T> tList, Integer index) {
@@ -77,7 +77,7 @@ public class ListUtil {
      * list<dto> 转换成单条对象
      *
      * @param tList 集合
-     * @param <T> 泛型
+     * @param <T>   泛型
      * @return 对象
      */
     public static <T> T listDtoToDto(List<T> tList) {
