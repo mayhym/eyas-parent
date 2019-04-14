@@ -51,4 +51,40 @@ public class ListUtil {
     private static <T> Map<Object, List<T>> groupByToMap(List<T> tList) {
         return tList.stream().collect(Collectors.groupingBy(T::getClass));
     }
+
+    /**
+     * 获取一个list前几条的数据
+     *
+     * @param tList 集合
+     * @param index 条数
+     * @param <T> 泛型
+     * @return list
+     */
+    public static <T> List<T> getIndexList(List<T> tList, Integer index) {
+        List<T> tListNew = new ArrayList<>();
+        for (T t : tList) {
+            if (index != 0) {
+                tListNew.add(t);
+                index--;
+            } else {
+                break;
+            }
+        }
+        return tListNew;
+    }
+
+    /**
+     * list<dto> 转换成单条对象
+     *
+     * @param tList 集合
+     * @param <T> 泛型
+     * @return 对象
+     */
+    public static <T> T listDtoToDto(List<T> tList) {
+        if (EmptyUtil.isNotEmpty(tList) || tList.size() > 0) {
+            return tList.get(0);
+        }
+        return null;
+    }
+
 }
