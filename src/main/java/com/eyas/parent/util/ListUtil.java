@@ -20,18 +20,18 @@ public class ListUtil {
      * @param splitNumber 拆个数
      * @return 拆分后的多个子集合
      */
-    public static List<List<Long>> splitList(List<Long> strList, Integer splitNumber) {
-        List<List<Long>> lists = new ArrayList<>();
-        List<Long> list = new ArrayList<>();
+    public static <T> List<List<T>> splitList(List<T> strList, Integer splitNumber) {
+        List<List<T>> lists = new ArrayList<>();
+        List<T> list = new ArrayList<>();
         int i = 0;
         int j = 0;
         if (EmptyUtil.isEmpty(strList)) {
             return lists;
         }
-        for (Long str : strList) {
+        for (T t : strList) {
             i++;
             j++;
-            list.add(str);
+            list.add(t);
             if (i % splitNumber == 0 || j == strList.size()) {
                 lists.add(list);
                 list = new ArrayList<>();
